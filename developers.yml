@@ -1,0 +1,20 @@
+---
+- hosts: developer
+  remote_user: nigelks
+  sudo: yes
+  tasks:
+  - name: update apt
+    apt: update_cache=yes
+  - name: install git
+    apt: name=git state=latest
+  - name: install screen
+    apt: name=screen state=latest
+  - name: install vim
+    apt: name=vim state=latest
+  - name: install Ag
+    apt: name=silversearcher-ag state=latest
+  - name: write .bash_profile
+    template: src=bash_profile.j2 dest=/home/nigelks/.bash_profile
+  - name: set git config
+    shell: git config --global user.email "nigelks@gmail.com"
+    shell: git config --global user.name "Nigel Soon"
