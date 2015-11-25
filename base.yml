@@ -1,0 +1,12 @@
+---
+- hosts: developer
+  remote_user: nigelks
+  sudo: yes
+  roles:
+    - common
+
+- hosts: developer
+  remote_user: nigelks
+  roles:
+    - nigel
+

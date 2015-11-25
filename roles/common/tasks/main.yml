@@ -1,0 +1,10 @@
+- name: update apt
+  apt: update_cache=yes
+- name: install git
+  apt: name=git state=latest
+- name: install screen
+  apt: name=screen state=latest
+- name: install vim
+  apt: name=vim state=latest
+- name: install Ag
+  apt: name=silversearcher-ag state=latest
