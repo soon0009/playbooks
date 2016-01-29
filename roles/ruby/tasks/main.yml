@@ -1,0 +1,23 @@
+- name: install rbenv
+  git: repo=https://github.com/rbenv/rbenv.git dest=~/.rbenv
+- shell: echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+- shell: echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+- git: repo=https://github.com/rbenv/ruby-build.git dest=~/.rbenv/plugins/ruby-build
+- shell: source ~/.bash_profile
+  args:
+    executable: /bin/bash
+- apt: name=libssl-dev state=latest
+  become: yes
+  become_user: root
+  become_method: sudo
+- apt: name=libreadline-dev state=latest
+  become: yes
+  become_user: root
+  become_method: sudo
+- apt: name=zlib1g-dev state=latest
+  become: yes
+  become_user: root
+  become_method: sudo
+- shell: rbenv install 2.3.0
+  args:
+    executable: /bin/bash

@@ -1,0 +1,16 @@
+username: nigelks
+mysql_root_password: dontforgety0urtow3l
+mysql_databases:
+  - name: dummy_db
+    encoding: utf8
+mysql_users:
+  - name: dummy_user
+    host: "%"
+    password: marv1nn33dsahug
+    priv: "dummy_db.*:ALL"
+git:
+  email: nigelks@gmail.com
+  name: Nigel Soon
+rbenv:
+  env: user
+  ruby_version: 2.3.0

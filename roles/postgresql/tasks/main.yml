@@ -1,0 +1,13 @@
+- apt: name=libpq-dev state=latest
+- apt: name=python-psycopg2 state=latest
+- apt: name=postgresql state=latest
+- apt: name=postgresql-contrib state=latest
+- apt: name=postgresql-client state=latest
+- postgresql_user: db=postgres name={{username}}
+  become: yes
+  become_user: postgres
+  become_method: sudo
+- postgresql_db: name=dummy_db owner={{username}}
+  become: yes
+  become_user: postgres
+  become_method: sudo
