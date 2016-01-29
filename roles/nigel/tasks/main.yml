@@ -1,8 +1,8 @@
 - name: write .bash_profile
   template: src=bash_profile.j2 dest=/home/nigelks/.bash_profile
 - name: set git config
-  shell: git config --global user.email "nigelks@gmail.com"
-  shell: git config --global user.name "Nigel Soon"
+  shell: git config --global user.email {{git.email}}
+  shell: git config --global user.name {{git.name}}
 - name: get dotfiles
   git: repo=https://github.com/soon0009/dotfiles.git dest=~/.dotfiles update=yes
 - name: install vim-plug

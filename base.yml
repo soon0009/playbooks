@@ -1,12 +1,21 @@
 ---
-- hosts: developer
-  remote_user: nigelks
-  sudo: yes
+- hosts: all
+  become: yes
   roles:
     - common
 
-- hosts: developer
-  remote_user: nigelks
+- hosts: all
+  become_user: {{username}}
+  vars_files:
+    - vars/main.yml
   roles:
     - nigel
+    - ruby
 
+- hosts: all
+  become: yes
+  vars_files:
+    - vars/main.yml
+  roles:
+    - { role: geerlingguy.mysql }
+    - postgresql
