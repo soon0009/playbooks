@@ -8,3 +8,5 @@
   apt: name=vim state=latest
 - name: install Ag
   apt: name=silversearcher-ag state=latest
+- name: install curl
+  apt: name=curl state=latest
