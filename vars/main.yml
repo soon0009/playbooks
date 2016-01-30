@@ -11,6 +11,3 @@ mysql_users:
 git:
   email: nigelks@gmail.com
   name: Nigel Soon
-rbenv:
-  env: user
-  ruby_version: 2.3.0
