@@ -13,10 +13,15 @@
 
 - hosts: development
   gather_facts: true # https://github.com/zzet/ansible-rbenv-role/issues/37
-  become: yes
   vars_files:
     - vars/main.yml
   roles:
     - zzet.rbenv
+
+- hosts: development
+  become: yes
+  vars_files:
+    - vars/main.yml
+  roles:
     - postgresql
     - { role: geerlingguy.mysql }
