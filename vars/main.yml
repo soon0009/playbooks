@@ -7,7 +7,7 @@ mysql_users:
   - name: dummy_user
     host: "%"
     password: marv1nn33dsahug
-    priv: "example_db.*:ALL"
+    priv: "dummy_db.*:ALL"
 git:
   email: nigelks@gmail.com
   name: Nigel Soon

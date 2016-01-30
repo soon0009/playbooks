@@ -1,3 +1,5 @@
+- apt: name=libpq-dev state=latest
+- apt: name=python-psycopg2 state=latest
 - apt: name=postgresql state=latest
 - apt: name=postgresql-contrib state=latest
 - apt: name=postgresql-client state=latest

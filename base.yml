@@ -6,17 +6,17 @@
 
 - hosts: all
   become_user: "{{username}}"
-  gather_facts: true # https://github.com/zzet/ansible-rbenv-role/issues/37
   vars_files:
     - vars/main.yml
   roles:
     - nigel
 
 - hosts: all
+  gather_facts: true # https://github.com/zzet/ansible-rbenv-role/issues/37
   become: yes
   vars_files:
     - vars/main.yml
   roles:
     - zzet.rbenv
-    - { role: geerlingguy.mysql }
     - postgresql
+    - { role: geerlingguy.mysql }
